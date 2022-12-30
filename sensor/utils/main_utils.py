@@ -4,6 +4,7 @@ from sensor.logger import logging
 from sensor.exception import SensorException
 import numpy as np
 import pandas as pd
+import dill
 
 def read_yaml_file(file_path:str) -> dict:
     try:
@@ -50,7 +51,7 @@ def load_numpy_array_data(file_path: str):
 def save_object(file_path:str,obj:str):
     try:
         logging.info("Entered the save_object method of main utils class")
-        os.mkdir(os.path.dirname(file_path),exist_ok=True)
+        os.makedirs(os.path.dirname(file_path),exist_ok=True)
         with open(file_path,"wb") as file_obj:
             dill.dump(obj,file_obj)
         logging.info("Exited the save_object method of MainUtils class")

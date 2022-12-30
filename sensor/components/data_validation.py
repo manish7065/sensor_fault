@@ -148,7 +148,7 @@ class DataValidation:
                 )
 
             logging.info(f"Data Validation Artifact: {data_validation_artifact} ")
-            logging.info(f"{'<<'*10} Data Validation Completed Sucessfully. {'>>'*10}")
+            logging.info(f"{'<<'*10} Data Validation Completed Sucessfully. {'>>'*10} \n")
 
 
             return data_validation_artifact

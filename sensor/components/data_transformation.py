@@ -102,7 +102,7 @@ class DataTransformation:
                 transformed_test_file_path = self.data_transformation_config.transformed_test_file_path)
             
             logging.info(f"Data transformantion articat: {data_transformation_artifact}")
-            logging.info(f"{'<<'*10} Data Transformation Completed Sucessfully. {'>>'*10}")
+            logging.info(f"{'<<'*10} Data Transformation Completed Sucessfully. {'>>'*10} \n")
 
             return data_transformation_artifact
         except Exception as e:
