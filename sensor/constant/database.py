@@ -1,1 +1,2 @@
-DATABASE_NAME="man"
+DATABASE_NAME="sensor_proj"
+COLLECTION_NAME = "car" #"sensor"

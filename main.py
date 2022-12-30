@@ -1,6 +1,15 @@
-from sensor.configuration.mongodb_connection import MongoDBClient
+# from sensor.configuration.mongodb_connection import MongoDBClient
+# from sensor.exception import SensorException
+from sensor.pipeline.training_pipeline import TrainPipeline
+import os,sys
+
+
 
 if __name__ == "__main__":
-    mongodb_client=MongoDBClient()
-    print(mongodb_client.database.list_collection_names())
+
+    trainig_pipeline = TrainPipeline()
+    trainig_pipeline.run_pipeline()
+
+
+
 
