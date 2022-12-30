@@ -34,3 +34,11 @@ class SensorModel:
             return y_hat
         except Exception as e:
             raise SensorException(e, sys)
+
+
+class ModelResolver:
+    def __init__(self,model_dir):
+        try:
+            pass
+        except Exception as e:
+            
