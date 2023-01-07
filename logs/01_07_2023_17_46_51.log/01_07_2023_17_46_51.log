@@ -1,0 +1,39 @@
+[2023-01-07 17:47:13,416]^;INFO^;25^;training_pipeline.py^;start_data_ingestion()^;starting data ingestion. 
+[2023-01-07 17:47:13,456]^;INFO^;83^;data_ingestion.py^;initiate_data_ingestion()^;<<<<<<<<<<<<<<<<<<<< Initiating the Data Ingestion. >>>>>>>>>>>>>>>>>>>>
+[2023-01-07 17:47:13,457]^;INFO^;26^;data_ingestion.py^;export_data_into_feature_store()^;Exporting data from mongoDB to feature_store. 
+[2023-01-07 17:47:24,933]^;INFO^;58^;data_ingestion.py^;split_data_as_train_test()^;performed train test split on DataFrame
+[2023-01-07 17:47:24,934]^;INFO^;62^;data_ingestion.py^;split_data_as_train_test()^;Creating the data ingestion directory to store the splited data at:artifact/01_07_2023_17_46_51/data_ingestion/ingested
+[2023-01-07 17:47:24,934]^;INFO^;66^;data_ingestion.py^;split_data_as_train_test()^;Exporting train test data to the directory 
+[2023-01-07 17:47:27,027]^;INFO^;76^;data_ingestion.py^;split_data_as_train_test()^;Exported train and test file path.
+[2023-01-07 17:47:27,150]^;INFO^;92^;data_ingestion.py^;initiate_data_ingestion()^;Data ingestion Artifact sucessfully completed: DataIngestionArtifact(trained_file_path='artifact/01_07_2023_17_46_51/data_ingestion/ingested/train.csv', test_file_path='artifact/01_07_2023_17_46_51/data_ingestion/ingested/test.csv')
+[2023-01-07 17:47:27,150]^;INFO^;93^;data_ingestion.py^;initiate_data_ingestion()^; <<<<<<<<<<<<<<<<<<<< Data ingestion completed sucessfully. >>>>>>>>>>>>>>>>>>>> 
+
+[2023-01-07 17:47:27,473]^;INFO^;30^;training_pipeline.py^;start_data_ingestion()^;data insgestion completed at artifact: DataIngestionArtifact(trained_file_path='artifact/01_07_2023_17_46_51/data_ingestion/ingested/train.csv', test_file_path='artifact/01_07_2023_17_46_51/data_ingestion/ingested/test.csv') 
+[2023-01-07 17:47:27,473]^;INFO^;41^;training_pipeline.py^;start_data_validation()^;Data valiodation starts
+[2023-01-07 17:47:27,514]^;INFO^;107^;data_validation.py^;initiate_data_validation()^;<<<<<<<<<<<<<<<<<<<< Initiating Data Validation >>>>>>>>>>>>>>>>>>>>
+[2023-01-07 17:47:27,988]^;INFO^;96^;data_validation.py^;validate_no_of_columns()^;Required number of columns: 164
+[2023-01-07 17:47:27,988]^;INFO^;97^;data_validation.py^;validate_no_of_columns()^;Data frame has columns: 164
+[2023-01-07 17:47:27,988]^;INFO^;96^;data_validation.py^;validate_no_of_columns()^;Required number of columns: 164
+[2023-01-07 17:47:27,988]^;INFO^;97^;data_validation.py^;validate_no_of_columns()^;Data frame has columns: 164
+[2023-01-07 17:47:27,989]^;INFO^;51^;data_validation.py^;is_numerical_column_exist()^;Missing numerical columns: [[]]
+[2023-01-07 17:47:27,989]^;INFO^;51^;data_validation.py^;is_numerical_column_exist()^;Missing numerical columns: [[]]
+[2023-01-07 17:47:29,150]^;INFO^;150^;data_validation.py^;initiate_data_validation()^;Data Validation Artifact: DataValidationArtifact(validation_status=False, valid_train_file_path='artifact/01_07_2023_17_46_51/data_ingestion/ingested/train.csv', valid_test_file_path='artifact/01_07_2023_17_46_51/data_ingestion/ingested/test.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact/01_07_2023_17_46_51/data_validation/drift_report/report.yaml') 
+[2023-01-07 17:47:29,150]^;INFO^;151^;data_validation.py^;initiate_data_validation()^;<<<<<<<<<<<<<<<<<<<< Data Validation Completed Sucessfully. >>>>>>>>>>>>>>>>>>>> 
+
+[2023-01-07 17:47:29,150]^;INFO^;56^;training_pipeline.py^;start_data_transformation()^;Start Data Transformation
+[2023-01-07 17:47:29,151]^;INFO^;57^;data_transformation.py^;initiate_data_transformation()^;<<<<<<<<<<<<<<<<<<<< Initiating data transformation. >>>>>>>>>>>>>>>>>>>>
+[2023-01-07 17:47:35,454]^;INFO^;53^;main_utils.py^;save_object()^;Entered the save_object method of main utils class
+[2023-01-07 17:47:35,458]^;INFO^;57^;main_utils.py^;save_object()^;Exited the save_object method of MainUtils class
+[2023-01-07 17:47:35,458]^;INFO^;104^;data_transformation.py^;initiate_data_transformation()^;Data transformantion articat: DataTransformationArtifact(transformed_object_file_path='artifact/01_07_2023_17_46_51/data_transformation/transformed_object/preprocessing.pkl', transformed_train_file_path='artifact/01_07_2023_17_46_51/data_transformation/transformed/train.npy', transformed_test_file_path='artifact/01_07_2023_17_46_51/data_transformation/transformed/test.npy')
+[2023-01-07 17:47:35,458]^;INFO^;105^;data_transformation.py^;initiate_data_transformation()^;<<<<<<<<<<<<<<<<<<<< Data Transformation Completed Sucessfully. >>>>>>>>>>>>>>>>>>>> 
+
+[2023-01-07 17:47:42,520]^;INFO^;53^;main_utils.py^;save_object()^;Entered the save_object method of main utils class
+[2023-01-07 17:47:42,527]^;INFO^;57^;main_utils.py^;save_object()^;Exited the save_object method of MainUtils class
+[2023-01-07 17:47:42,527]^;INFO^;82^;model_trainer.py^;initiate_model_trainer()^;Model Trainer Artifact: ModelTrainerArtifact(trained_model_file_path='artifact/01_07_2023_17_46_51/model_trainer/trained_model/model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=1.0, precision_score=1.0, recall_score=1.0), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9822646657571624, precision_score=0.9932556713672593, recall_score=0.9715142428785607))
+[2023-01-07 17:47:43,330]^;INFO^;88^;model_evaluatiom.py^;initiate_model_evaluation()^;Model Evaluation Artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=-0.00787453585197262, best_model_path=None, trianed_model_path=None, train_model_metric_artifact='artifact/01_07_2023_17_46_51/model_trainer/trained_model/model.pkl', test_model_metric_artifact=ClassificationMetricArtifact(f1_score=0.981404958677686, precision_score=0.974025974025974, recall_score=0.9888965995836225))
+[2023-01-07 17:47:43,332]^;INFO^;29^;exception.py^;__init__()^;
+        Error occured in script: 
+        [ /config/workspace/sensor/pipeline/training_pipeline.py ] at 
+        try block line number: [114] and exception block line number: [121] 
+        error message: [Trained model is not better than best model]
+        

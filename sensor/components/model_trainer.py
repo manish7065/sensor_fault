@@ -8,6 +8,7 @@ from sensor.ml.metric.classification_metric import get_classification_score
 from sensor.ml.model.estimator import SensorModel
 from sensor.utils.main_utils import load_object,save_object
 
+import os,sys
 
 class ModelTrainer:
 
@@ -27,21 +28,21 @@ class ModelTrainer:
             return xgb_clf
 
         except Exception as e:
-            raise SensorException(e, sys)
+            raise SensorException(e,sys)
 
     def initiate_model_trainer(self)->ModelTrainerArtifact:
         try:
             #Fetching the train & test data stored after data transformation
             train_file_path = self.data_transformation_artifact.transformed_train_file_path
-            test_file_apth  = self.data_transformation_artifact.transformed_test_file_path
+            test_file_path  = self.data_transformation_artifact.transformed_test_file_path
 
             # loading training and testing arrar
-            trian_arr = load_numpy_array_data(file_path=train_file_path)
+            train_arr = load_numpy_array_data(file_path=train_file_path)
             test_arr  = load_numpy_array_data(file_path=test_file_path)
 
             x_train,y_train,x_test,y_test = (
                 train_arr[:,:-1],
-                trian_arr[:,-1],
+                train_arr[:,-1],
                 test_arr[:,:-1],
                 test_arr[:,-1]
             )
@@ -64,15 +65,17 @@ class ModelTrainer:
                 raise Exception("Model is not good try some more experimentation.")
 
 
+            preprocessor = load_object(file_path=self.data_transformation_artifact.transformed_object_file_path)
+            
             model_dir_path = os.path.dirname(self.model_trainer_config.trained_model_file_path)
             os.makedirs(model_dir_path, exist_ok=True)
-
-            preprocessor = load_object(file_path=self.data_transformation_artifact.transformed_object_file_path)
+            
             sensor_model = SensorModel(preprocessor=preprocessor, model=model)
+            save_object(file_path=self.model_trainer_config.trained_model_file_path, obj=sensor_model)
 
             # MODEL TRAINER ARTIFACT
             model_trainer_artifact=ModelTrainerArtifact(
-                trained_model_file_path = self.model_trainer_config, 
+                trained_model_file_path = self.model_trainer_config.trained_model_file_path, 
                 train_metric_artifact = classification_train_metric, 
                 test_metric_artifact = classification_test_metric)
 

@@ -1,7 +1,7 @@
 import os
 
 
-
+SAVED_MODEL_DIR = os.path.join("saved_models")
 #defining common constant variable for training pipeline
 TARGET_COLUMN : str = 'class'
 PIPELINE_NAME : str = 'sensor'
@@ -62,3 +62,10 @@ Model Evaluation related constants
 MODEL_EVALUATION_DIR_NAME:str  = "model_evaluation"
 MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE:str = 0.02
 MODEL_EVALUATION_REPORT_NAME:str="report.yaml"
+
+
+"""
+Model Pusher related constants start with MODEL_PUSHER
+"""
+MODEL_PUSHER_DIR_NAME : str = "model_pusher"
+MODEL_PUSHER_SAVED_MODEL_DIR = SAVED_MODEL_DIR

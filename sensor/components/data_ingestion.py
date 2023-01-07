@@ -50,7 +50,7 @@ class DataIngestion:
             train_set, test_set = train_test_split(data_frame,
                                     test_size=self.data_ingestion_config.train_test_split_ratio)
 
-            print(f"train test split ratio = {self.data_ingestion_config.train_test_split_ratio}")
+            # print(f"train test split ratio = {self.data_ingestion_config.train_test_split_ratio}")
             # print(train_set.shape)
             # print(test_set.shape)
 
