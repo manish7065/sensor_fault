@@ -39,6 +39,7 @@ class SensorData:
             
             # replace na with Nan
             df.replace({'na':np.nan},inplace = True)
+            
             # logging.info(f"Data read completed from DataBase: {df.head()}")
             return df
             
