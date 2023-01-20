@@ -10,4 +10,6 @@ imblearn==0.0
 xgboost
 fastapi
 uvicorn
+python-dotenv
+
 -e .

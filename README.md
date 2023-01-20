@@ -110,3 +110,6 @@ then run
 ```
 python main.py
 ```
+
+git config --global user.name manish
+git config --global user.email manumi296@gmail.com
