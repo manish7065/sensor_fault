@@ -26,9 +26,9 @@ step:-5. # check the docker images
 ```
 docker images
 ```
-step:-6 # You can copy Image ID from the above command response
+step:-6 # You can copy Image ID from the above command response and replace the mongodb url with your own. otherwise it will give you error at the time of model training
 ```
-docker run -p 8080:8080 -e PORT=8080 <Image Name>/<Image ID>
+docker run -p 8080:8080 -e PORT=8080 -e MONGO_DB_URL="mongodb+srv://trialmongo:<pwd>@cluster0.2gugo3n.mongodb.net/test" <image_name>/<Image ID>
 ```
 Now you can check the port 8080. A FastAPI backend interface will be there.
 You can train the model here
