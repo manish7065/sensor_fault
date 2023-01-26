@@ -1,4 +1,39 @@
 # Sensor-Fault-Detection
+
+In this branch the code is written in such a way that it can run in any docker machine or in docker play lab.
+
+To try it follow the following steps:
+
+step:-1. # Get ready with a system
+```
+open the terminal/instance/[docker playground](https://labs.play-with-docker.com/)
+```
+
+step:-2. # Clone the repo
+```
+git clone -b nero-lab https://github.com/manish7065/sensor_fault.git  
+```
+
+step:-3. # Select the downloaded directory 
+```
+cd sensor_fault 
+```
+step:-4. # built the docker image
+```
+docker build -t demo:lts . 
+```
+step:-5. # check the docker images
+```
+docker images
+```
+step:-6 # You can copy Image ID from the above command response
+```
+docker run -p 8080:8080 -e PORT=8080 <Image Name>/<Image ID>
+```
+Now you can check the port 8080. A FastAPI backend interface will be there.
+You can train the model here
+
+
 ## Problem Statement
 
 This project aims to detect and predict faults in the Air Pressure System (APS) of a heavy-duty vehicle. By accurately identifying the faulty component of the APS, this project aims to reduce repair costs and time. The problem at hand is a binary classification task, in which the goal is to determine whether a failure was caused by a specific component of the APS or by some other factor.
