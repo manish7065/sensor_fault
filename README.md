@@ -41,7 +41,7 @@ FastAPI has been used to provide the API interface to Train & predict the model.
 
 ### Step 1: Clone the repository
 ```bash
-git clone https://github.com/sethusaim/Sensor-Fault-Detection.git
+git clone https://github.com/manish7065/Sensor-Fault-Detection.git
 ```
 
 ### Step 2- Create a conda environment after opening the repository
